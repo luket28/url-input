@@ -1,0 +1,73 @@
+body {
+    color: #20202f;
+    background: #eee;
+    font-size: 16px;
+    font-family: Helvetica,​ arial;
+}
+
+h3 {
+    font-weight: normal;
+    margin-top: 0px;
+}
+
+form {
+    background: #fff;
+    border: 1px solid #878787;
+    border-radius: 8px;
+    padding: 20px 40px;
+    width: 450px; 
+    margin: 10px auto;    
+}
+
+form .form-widget {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form .form-widget label {
+    display: block;
+    padding: 10px 0;
+}
+
+button, 
+input[type=button],
+input[type=submit],
+.submit {
+    display: block;
+    color: #ffffff;
+    font-size: 20px;
+    background: #0085b2;
+    width: 150px;
+    height: 35px;
+    margin: 40px auto 0px;
+    border: medium;
+    border-radius: 4px;
+}
+
+input:not([type="button"]):not([type="submit"]) {
+    width: 100%;
+    display: block;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input[type=url].twitter-url {
+    background: #eee url('../images/icons/twitter.png') left center no-repeat;
+    padding-left: 51px;
+}
+
+input[type=url].facebook-url {
+    background: #eee url('../images/icons/facebook.png') left center no-repeat;
+    padding-left: 51px;
+}
+
+input[type=url].globe-url {
+    background: #eee url('../images/icons/globe.png') left center no-repeat;
+    padding-left: 51px;
+}
+
+
