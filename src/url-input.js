@@ -63,7 +63,9 @@
             },
 
             buildSimple: function (parts) {
-                return parts.domain + (!!parts.port ? ':' + parts.port : '') + (!!parts.uri ? parts.uri : '');
+                var sub_domain = (!!parts.sub_domain && parts.sub_domain != 'www' ? parts.sub_domain + '.' : '');
+
+                return sub_domain + parts.domain + (!!parts.port ? ':' + parts.port : '') + (!!parts.uri ? parts.uri : '');
             },
 
             extract: function (url) {
