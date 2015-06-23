@@ -22,6 +22,9 @@ function htmlout($text)
         <script type="text/javascript">
         $(function () {
             $('input[type=url]').urlInput({
+                element: {
+                    type: 'text'
+                },
                 defaults: {
                     'protocol': 'https'
                 }

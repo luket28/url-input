@@ -55,17 +55,17 @@ input:not([type="button"]):not([type="submit"]) {
     box-sizing: border-box;
 }
 
-input[type=url].twitter-url {
+input[type].twitter-url {
     background: #eee url('../images/icons/twitter.png') left center no-repeat;
     padding-left: 51px;
 }
 
-input[type=url].facebook-url {
+input[type].facebook-url {
     background: #eee url('../images/icons/facebook.png') left center no-repeat;
     padding-left: 51px;
 }
 
-input[type=url].globe-url {
+input[type].globe-url {
     background: #eee url('../images/icons/globe.png') left center no-repeat;
     padding-left: 51px;
 }
