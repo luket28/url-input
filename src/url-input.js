@@ -122,11 +122,9 @@
         }
 
         /**
-         * Update the primary input with the hidden input's value
+         * Updates the plugin after a change in the url
          */
         plugin.update = function () {
-            $element.removeData('url-input-previous');
-
             if (!plugin.url.isValid(element.value)) {
                 $hidden.val(element.value);
                 return ;
@@ -136,10 +134,41 @@
             var parts = plugin.url.extract(value);
 
             if (!!parts) {
-                element.value = plugin.url.buildSimple(parts);
+                plugin.updateElement(parts);
+                $element.data('url-input-display', element.value);
+            } else {
+                $element.removeData('url-input-display');
             }
 
+            plugin.updateHidden(parts);
+        }
+
+        /**
+         * Updates the value of the hidden input using url parts
+         */
+        plugin.updateHidden = function (parts) {
             $hidden.val(plugin.url.build(parts));
+        }
+
+        /**
+         * Updates the value of the primary element using url parts
+         */
+        plugin.updateElement = function (parts) {
+            element.value = plugin.url.buildSimple(parts);
+        }
+
+        /**
+         * Returns the hidden element
+         */
+        plugin.getHidden = function () {
+            return $hidden;
+        }
+
+        /**
+         * Returns the primary element
+         */
+        plugin.getElement = function () {
+            return $element;
         }
 
         /**
@@ -148,7 +177,7 @@
          * Sets primary element's value to the value of the hidden input
          */
         plugin.onFocus = function () {
-            $element.data('url-input-previous', element.value);
+            $element.data('url-input-display', element.value);
             element.value = $hidden.val();
         }
 
@@ -158,9 +187,9 @@
          * Switch the values between primary & hidden elements
          */
         plugin.onBlur = function () {
-            if ($element.data('url-input-previous')) {
-                element.value = $element.data('url-input-previous');
-                $element.removeData('url-input-previous');
+            if ($element.data('url-input-display')) {
+                element.value = $element.data('url-input-display');
+                $element.removeData('url-input-display');
             }
         }
 
